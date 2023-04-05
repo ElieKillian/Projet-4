@@ -1,47 +1,8 @@
 /*** Général ***/
 
-* {
-    font-family: 'Roboto', sans-serif;
-}
-html{
-    font-size: 10px;
-}
-:root{
-    --white: #FFFFFF;
-    --light-grey: #F7F7F7;
-    --dark-grey: #7E7E7E;
-    --light-green: #99E2D0;
-    --dark-green:#008766;
-    --light-blue: #89C8FA;
-    --dark-blue: #003A68;
-    --purple: #9356DC;
-}
-body {
-    margin: 0rem;
-    padding: 0rem;
-}
-.container{
-    max-width: 72rem;
-    background-color: var(--light-grey);
-}
-h1, h2, h3{
-    margin: 0rem;
-}
-h2{
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 28px;
-}
-p{
-    margin: 0rem;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 21px;
-}
+@import "variables.scss";
 
-/*** Header ***/
+/*** Main page ***/
 
 .header{
     &__title{
@@ -76,7 +37,6 @@ p{
             
             #text__entry{
                 border: hidden;
-                background: #EAEAEA;
                 text-align: center;
                 font-style: normal;
                 font-weight: 500;
@@ -88,15 +48,16 @@ p{
 }
 
 .explorer{
+
+    text-align: center;
+
     &__text{
         margin-top: 3.95rem;
-        text-align: center;
     }
 
     &__divbutton{
 
         margin-top: 2.7rem;
-        text-align: center;
 
         &__button{
             padding: 1.3rem 1.875rem;
@@ -116,56 +77,74 @@ p{
 .operation{
     padding-left: 2rem;
     margin-top: 5.7rem;
+    padding-bottom: 6.8rem;
     background-color: var(--white);
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+
+    @media all and (min-width:1024px){
+        padding-left: 18rem;
+        padding-right: 18rem;
+        padding-bottom: 5rem;
+        padding-right: 20.7rem;
+    }
 
     h2{
         padding-top: 4.8rem;
     }
 
-    &__step{
+    &__chart{
+
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 2.3rem;
-        padding-top: 2.8rem;
-        margin-left: 1.2rem;
-        margin-right: 2rem;
-        padding-bottom: 2.8rem;
-        background-color: var(--light-grey);
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-        border-radius: 20px;
-
-        .fa-1, .fa-2, .fa-3{
-            border-radius: 2rem;
-            margin-left: -1.2rem;
-            background-color: var(--purple);
-            color:var(--white);
-        }
-        .fa-1{
-            padding: 0.4rem 0.8rem
-        }
-        .fa-2{
-            padding: 0.4rem 0.7rem;
-        }
-        .fa-3{
-            padding: 0.4rem 0.5rem
-        }
-        .fa-store{
-            color:var(--purple)
-        }
-        .fa-mobile-screen-buton, .fa-list-ul{
-            color:var(--dark-grey)
+        flex-direction: column;
+        gap: 2.5rem;
+        padding-top: 2.5rem;
+        
+        @media all and (min-width:1024px){
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
         }
 
-        &__text{
-            text-align: center;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 1.6rem;
-            line-height: 1.9rem;
+        &__step{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2.3rem;
+            margin-left: 1.2rem;
+            margin-right: 2rem;
+            padding-top: 2.8rem;
+            padding-bottom: 2.8rem;
+            background-color: var(--light-grey);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 20px;
+            
+            .fa-1, .fa-2, .fa-3{
+                border-radius: 2rem;
+                margin-left: -1.2rem;
+                background-color: var(--purple);
+                color:var(--white);
+            }
+            .fa-1{
+                padding: 0.4rem 0.8rem
+            }
+            .fa-2{
+                padding: 0.4rem 0.7rem;
+            }
+            .fa-3{
+                padding: 0.4rem 0.5rem
+            }
+            .fa-store{
+                color:var(--purple)
+            }
+            .fa-mobile-screen-buton, .fa-list-ul{
+                color:var(--dark-grey)
+            }
+
+            &__text{
+                text-align: center;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 1.6rem;
+                line-height: 1.9rem;
+            }
         }
     }
 
@@ -175,7 +154,163 @@ p{
 }
 
 .restaurants{
-    margin-top: 6.8rem;
     padding-top: 5.4rem;
     padding-left: 2rem;
+    padding-right: 1.8rem;
+
+    @media all and (min-width:1024px){
+        padding-left: 18rem;
+        padding-right: 18rem;
+    }
+
+    &__chart{
+        display: flex;
+        flex-direction: column;
+        padding-top: 1.8rem;
+        gap : 1.8rem;
+
+        @media all and (min-width:1024px){
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap : 5rem 10rem;
+        }
+
+        &__cards{
+            height: 25.1rem;
+            border-radius: 2rem;
+            background-color: var(--white);
+
+            &__image{
+
+                height: 18.1rem;
+
+                img{
+                    object-fit: cover;
+                    z-index: 1;
+                    height: 18.1rem;
+                    width: 100%;
+                    border-radius: 20px 20px 0px 0px;
+                    }
+
+                &__new{
+                    position: relative;
+                    z-index: 2;
+                    left: 70%;
+                    bottom: 90%;
+                    display: flex;
+                    justify-content:center;
+                    align-items: center;
+                    width: 8rem;
+                    height: 2.8rem;
+                    background-color: var(--light-green);
+                    color: var(--dark-green);
+                    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+                    border-radius: 2px; 
+                }
+            }
+
+            &__div{
+                display: flex;
+                justify-content: space-between;
+
+                &__text{
+                    padding-top: 1.6rem;
+                    padding-left: 1.3rem;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 1.7rem;
+                    line-height: 2rem;
+                }
+
+                &__heart{
+
+                    padding-right: 2.5rem;
+                    display: flex;
+                    align-items: center;
+
+                    .fa-heart{
+                        font-size: 2.4rem;
+                    }
+                }
+            }     
+        }
+    }
+}
+
+.footer{
+
+    margin-top: 6.6rem;
+    padding-left: 2.5rem;
+    background-color: #353535;
+
+    @media all and (min-width:1024px){
+        display: flex;
+        justify-content: space-between;
+        padding-top: 6.4rem;
+        padding-left: 0rem;
+    }
+
+    &__logo{
+
+        padding-top: 2.2rem;
+        order: 1;
+
+        @media all and (min-width:1024px){
+            padding-top: 0rem;
+            margin-right: 3rem;
+            order: 2;
+        }
+           
+        img{
+            object-fit: contain;
+            width: 13.9rem;
+            height: 2.7rem;
+            filter: invert(100%);   
+            }
+    }
+    
+    &__chart{
+
+        display: flex;
+        flex-direction: column;
+        padding-top: 1.6rem;
+        padding-bottom: 2.2rem;
+        gap: 0.7rem;
+        order: 2;
+
+        @media all and (min-width:1024px){
+            flex-direction: row;
+            justify-content: flex-start ;
+            padding-top: 0rem;
+            margin-left: 40%;
+            order: 1;
+        }
+
+        &__offer, &__legal{
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            
+            a{
+                color: var(--white);
+            }
+        }
+
+        &__offer{
+            @media all and (min-width:1024px){
+                flex-direction: row;           
+            }
+        }
+
+        &__legal{
+            @media all and (min-width:1024px){
+                flex-direction: row;
+                margin-left: 4rem;
+            }
+        }
+    }
 }
