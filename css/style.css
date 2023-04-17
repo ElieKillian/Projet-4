@@ -67,6 +67,47 @@ p {
 }
 
 /*** Main page ***/
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  position: fixed;
+  background-color: var(--light-grey);
+  height: 100vh;
+  width: 100vw;
+  z-index: 3;
+  animation: loadersite 3s 0ms;
+  animation-fill-mode: forwards;
+}
+@keyframes loadersite {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+.loader img {
+  animation: animationloader 1s 0ms;
+  animation-iteration-count: infinite;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-top: 15rem;
+  width: 20rem;
+  height: 20rem;
+}
+@keyframes animationloader {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.5;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
 .header__title {
   width: auto;
   display: flex;
@@ -230,6 +271,7 @@ p {
 }
 .restaurants__chart__cards__image {
   height: 18.1rem;
+  position: relative;
 }
 .restaurants__chart__cards__image img {
   -o-object-fit: cover;
@@ -240,10 +282,10 @@ p {
   border-radius: 20px 20px 0px 0px;
 }
 .restaurants__chart__cards__image__new {
-  position: relative;
+  position: absolute;
   z-index: 2;
-  left: 70%;
-  bottom: 90%;
+  right: 10%;
+  top: 10%;
   display: flex;
   justify-content: center;
   align-items: center;

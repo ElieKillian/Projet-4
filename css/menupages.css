@@ -183,7 +183,7 @@ p {
   box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
   border-radius: 1.5rem;
   height: 6.9rem;
-  animation: progress-loading 1s 500ms;
+  animation: progress-loading 500ms 500ms;
   animation-fill-mode: forwards;
 }
 @keyframes progress-loading {
