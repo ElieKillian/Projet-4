@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/*** Général ***/
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -42,6 +41,7 @@ a:visited {
   color: var(--black);
 }
 
+/*** Général ***/
 h1, h2, h3 {
   font-style: normal;
   margin: 0rem;

@@ -1,6 +1,6 @@
 /*** Général ***/
 
-@import "variables.scss";
+@use "general.scss";
 
 h1, h2, h3{
     font-style: normal;

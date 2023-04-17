@@ -1,6 +1,6 @@
 /*** Général ***/
 
-@import "variables.scss";
+@use "general.scss";
 
 h1, h2, h3, p{
     margin: 0rem;
@@ -88,9 +88,49 @@ p{
             align-items: center;
             margin-left: 1.7rem;
 
-            .fa-heart{
+            &__heart{
+
                 margin-right: 4.1rem;
-                font-size: 2.2rem;
+                display: flex;
+                align-items: center;   
+                overflow: hidden;
+                
+                    .fa-heart{
+                        font-size: 2.2rem;                        
+                        cursor: pointer;   
+                        position: relative;
+                        overflow: hidden; 
+                        background-clip: content-box;
+                        z-index: 0;
+
+                        &::after{
+                            content: '';
+                            //content: '\f004';
+                            //font: var(--fa-font-solid);                            
+                            position: absolute;
+                            overflow: hidden;
+                            width: 100%;
+                            height: 100%;
+                            top: 22px;
+                            left: 0px;
+                            background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+                            background-clip: padding-box;
+                            z-index: -1;
+                        }
+                        &:active::after{
+                                animation: complete-heart 0.5s 0s;
+                                animation-fill-mode: forwards;
+                            }  
+            
+                            @keyframes complete-heart{
+                            from{
+                                top: 22px;                            
+                            }
+                            to{
+                                top:0px;
+                            }
+                        }
+                    }
             }
         }
 
@@ -111,9 +151,24 @@ p{
                 justify-content: space-between;
                 align-items: center;
                 cursor: pointer;
+                opacity: 0;
                 background: var(--white);
                 box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
                 border-radius: 1.5rem;
+                height: 6.9rem;
+                animation: progress-loading 1s 500ms;
+                animation-fill-mode: forwards;
+    
+                @keyframes progress-loading{
+                    from{
+                        opacity: 0;
+                        transform:  translateX(-999px);
+                    }
+                    to{
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
 
                 &__insidecard{
 
@@ -121,22 +176,28 @@ p{
                     flex-direction: row;
                     justify-content: space-between;
                     align-items: end;
-                    width: 100%;
-                    padding: 1.5rem;
-                    padding-top: 0.85rem;
-                    padding-bottom: 0.85rem;
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                    overflow: hidden;
+                    width: fill;
 
                     &__text{
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-start;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
 
-                    &__price p{
-                        font-weight: 700;
-                        font-size: 1.5rem;
-                        line-height: 1.8rem;
-                    }                
+                    &__price {
+
+                        padding-left: 1.5rem;
+                        
+                        p{
+                            font-weight: 700;
+                            font-size: 1.5rem;
+                            line-height: 1.8rem;
+                        }
+                    }
+                                  
                 }
                 
                 &__check{
@@ -144,19 +205,31 @@ p{
                     justify-content: center;
                     background-color: var(--light-green);
                     color: var(--white);
-                    width: 6.9rem;
-                    padding-top: 2rem;
-                    padding-bottom: 2rem;
+                    padding-top: 2.5rem;
+                    padding-bottom: 2.5rem;
                     border-top-right-radius: 1.5rem;
                     border-bottom-right-radius: 1.5rem;
+                    width: 0rem;
+                    transition-property: width;
+                    transition-duration: 500ms;
+                    transition-delay: 0s;
 
                     .fa-circle-check{
-                    font-size:  1.6rem;
+                        visibility: hidden;
+                        font-size:  2rem;
                     }
+                }
+
+                :active > &__check {
+                    
+                    width: 6.9rem;
+
+                    .fa-circle-check{
+                        visibility: visible;
+                        }
                 }
             }
         }
- 
         &__order{
             display: flex;
             justify-content: center;
@@ -171,6 +244,7 @@ p{
         }
     }
     }
+
 .footer{
 
     margin-top: 0rem;
