@@ -41,6 +41,78 @@ a:visited {
   color: var(--black);
 }
 
+/* elements */
+.footer {
+  margin-top: 0rem;
+  padding-left: 2.5rem;
+  background-color: #353535;
+}
+@media all and (min-width: 1024px) {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6.4rem;
+    padding-left: 0rem;
+  }
+}
+.footer__logo {
+  padding-top: 2.2rem;
+  order: 1;
+}
+@media all and (min-width: 1024px) {
+  .footer__logo {
+    padding-top: 0rem;
+    margin-right: 3rem;
+    order: 2;
+  }
+}
+.footer__logo img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 13.9rem;
+  height: 2.7rem;
+  filter: invert(100%);
+}
+.footer__chart {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.6rem;
+  padding-bottom: 2.2rem;
+  gap: 0.7rem;
+  order: 2;
+}
+@media all and (min-width: 1024px) {
+  .footer__chart {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 0rem;
+    margin-left: 40%;
+    order: 1;
+  }
+}
+.footer__chart__offer, .footer__chart__legal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+.footer__chart__offer a, .footer__chart__legal a {
+  color: var(--white);
+}
+@media all and (min-width: 1024px) {
+  .footer__chart__offer {
+    flex-direction: row;
+  }
+}
+@media all and (min-width: 1024px) {
+  .footer__chart__legal {
+    flex-direction: row;
+    margin-left: 4rem;
+  }
+}
+
 /*** Général ***/
 h1, h2, h3, p {
   margin: 0rem;
@@ -49,7 +121,7 @@ h1, h2, h3, p {
 h1 {
   font-family: "Shrikhand";
   font-style: italic;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 2.8rem;
   line-height: 4.1rem;
 }
@@ -103,7 +175,7 @@ p {
 .menu img {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100%;
+  width: 100vw;
   height: 27.5rem;
 }
 .menu__card {
@@ -118,11 +190,23 @@ p {
   border-top-left-radius: 2rem;
   background-color: var(--light-grey);
 }
+@media all and (min-width: 1024px) {
+  .menu__card {
+    margin-left: 13%;
+    margin-right: 13%;
+  }
+}
 .menu__card__head {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-left: 1.7rem;
+}
+@media all and (min-width: 1024px) {
+  .menu__card__head {
+    justify-content: center;
+    gap: 2.4rem;
+  }
 }
 .menu__card__head__heart {
   margin-right: 4.1rem;
@@ -172,6 +256,12 @@ p {
   height: 2.7rem;
   width: 4rem;
   border-bottom: 2px solid var(--light-green);
+}
+@media all and (min-width: 1024px) {
+  .menu__card__chart {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
 }
 .menu__card__chart__element {
   display: flex;
@@ -257,74 +347,13 @@ p {
   padding: 1.3rem 1.6rem;
   margin: 4rem 9.5rem 0rem;
 }
-
-.footer {
-  margin-top: 0rem;
-  padding-left: 2.5rem;
-  background-color: #353535;
+.menu__card__order:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }
 @media all and (min-width: 1024px) {
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 6.4rem;
-    padding-left: 0rem;
-  }
-}
-.footer__logo {
-  padding-top: 2.2rem;
-  order: 1;
-}
-@media all and (min-width: 1024px) {
-  .footer__logo {
-    padding-top: 0rem;
-    margin-right: 3rem;
-    order: 2;
-  }
-}
-.footer__logo img {
-  -o-object-fit: contain;
-     object-fit: contain;
-  width: 13.9rem;
-  height: 2.7rem;
-  filter: invert(100%);
-}
-.footer__chart {
-  display: flex;
-  flex-direction: column;
-  padding-top: 1.6rem;
-  padding-bottom: 2.2rem;
-  gap: 0.7rem;
-  order: 2;
-}
-@media all and (min-width: 1024px) {
-  .footer__chart {
-    flex-direction: row;
-    justify-content: flex-start;
-    padding-top: 0rem;
+  .menu__card__order {
     margin-left: 40%;
-    order: 1;
-  }
-}
-.footer__chart__offer, .footer__chart__legal {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-}
-.footer__chart__offer a, .footer__chart__legal a {
-  color: var(--white);
-}
-@media all and (min-width: 1024px) {
-  .footer__chart__offer {
-    flex-direction: row;
-  }
-}
-@media all and (min-width: 1024px) {
-  .footer__chart__legal {
-    flex-direction: row;
-    margin-left: 4rem;
+    margin-right: 40%;
   }
 }/*# sourceMappingURL=menupages.css.map */
