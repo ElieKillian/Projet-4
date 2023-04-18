@@ -156,7 +156,7 @@ p{
                     }
             }
         }
-        &__chart{
+        &__chart1{
             margin-top: 4rem;
             display: flex;
             flex-direction: column;
@@ -184,6 +184,216 @@ p{
                 border-radius: 1.5rem;
                 height: 6.9rem;
                 animation: progress-loading 500ms 500ms;
+                animation-fill-mode: forwards;
+    
+                @keyframes progress-loading{
+                    from{
+                        opacity: 0;
+                        transform:  translateX(-999px);
+                    }
+                    to{
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+
+                &__insidecard{
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: end;
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                    overflow: hidden;
+                    width: fill;
+
+                    &__text{
+                        overflow: hidden;
+
+                        h3, p{
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+
+                    &__price {
+
+                        padding-left: 1.5rem;
+                        
+                        p{
+                            font-weight: 700;
+                            font-size: 1.5rem;
+                            line-height: 1.8rem;
+                        }
+                    }
+                                  
+                }
+                
+                &__check{
+                    display: flex;
+                    justify-content: center;
+                    background-color: var(--light-green);
+                    color: var(--white);
+                    padding-top: 2.5rem;
+                    padding-bottom: 2.5rem;
+                    border-top-right-radius: 1.5rem;
+                    border-bottom-right-radius: 1.5rem;
+                    width: 0rem;
+                    transition-property: width;
+                    transition-duration: 500ms;
+                    transition-delay: 0s;
+
+                    .fa-circle-check{
+                        visibility: hidden;
+                        font-size:  2rem;
+                    }
+                }
+
+                :active > &__check {
+                    
+                    width: 6.9rem;
+
+                    .fa-circle-check{
+                        visibility: visible;
+                        }
+                }
+            }
+        }
+        &__chart2{
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+
+            h2{
+                height: 2.7rem;
+                width: 4rem;
+                border-bottom: 2px solid var(--light-green);
+            }
+
+            @media all and (min-width:1024px){
+                margin-left: 15%; 
+                margin-right: 15%;
+            }
+
+            &__element{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                opacity: 0;
+                background: var(--white);
+                box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+                border-radius: 1.5rem;
+                height: 6.9rem;
+                animation: progress-loading 1s 500ms;
+                animation-fill-mode: forwards;
+    
+                @keyframes progress-loading{
+                    from{
+                        opacity: 0;
+                        transform:  translateX(-999px);
+                    }
+                    to{
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+
+                &__insidecard{
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: end;
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                    overflow: hidden;
+                    width: fill;
+
+                    &__text{
+                        overflow: hidden;
+
+                        h3, p{
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+
+                    &__price {
+
+                        padding-left: 1.5rem;
+                        
+                        p{
+                            font-weight: 700;
+                            font-size: 1.5rem;
+                            line-height: 1.8rem;
+                        }
+                    }
+                                  
+                }
+                
+                &__check{
+                    display: flex;
+                    justify-content: center;
+                    background-color: var(--light-green);
+                    color: var(--white);
+                    padding-top: 2.5rem;
+                    padding-bottom: 2.5rem;
+                    border-top-right-radius: 1.5rem;
+                    border-bottom-right-radius: 1.5rem;
+                    width: 0rem;
+                    transition-property: width;
+                    transition-duration: 500ms;
+                    transition-delay: 0s;
+
+                    .fa-circle-check{
+                        visibility: hidden;
+                        font-size:  2rem;
+                    }
+                }
+
+                :active > &__check {
+                    
+                    width: 6.9rem;
+
+                    .fa-circle-check{
+                        visibility: visible;
+                        }
+                }
+            }
+        }
+        &__chart3{
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+
+            h2{
+                height: 2.7rem;
+                width: 4rem;
+                border-bottom: 2px solid var(--light-green);
+            }
+
+            @media all and (min-width:1024px){
+                margin-left: 15%; 
+                margin-right: 15%;
+            }
+
+            &__element{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                opacity: 0;
+                background: var(--white);
+                box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+                border-radius: 1.5rem;
+                height: 6.9rem;
+                animation: progress-loading 1500ms 500ms;
                 animation-fill-mode: forwards;
     
                 @keyframes progress-loading{
