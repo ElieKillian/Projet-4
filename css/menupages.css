@@ -223,27 +223,43 @@ p {
   z-index: 0;
 }
 .menu__card__head__heart .fa-heart::after {
-  content: "";
+  content: "\f004";
+  font: var(--fa-font-solid);
+  color: var(--purple);
   position: absolute;
   overflow: hidden;
   width: 100%;
   height: 100%;
-  top: 22px;
+  top: 0px;
   left: 0px;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  background-clip: padding-box;
+  background-clip: content-box;
   z-index: -1;
+  opacity: 0;
+  animation: empty-heart 1s 0s;
+  animation-fill-mode: forwards;
 }
-.menu__card__head__heart .fa-heart:active::after {
-  animation: complete-heart 0.5s 0s;
+.menu__card__head__heart .fa-heart:hover::after {
+  animation: complete-heart 1s 0s;
   animation-fill-mode: forwards;
 }
 @keyframes complete-heart {
   from {
-    top: 22px;
+    transform: scale(0);
+    opacity: 0;
   }
   to {
-    top: 0px;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes empty-heart {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
   }
 }
 .menu__card__chart {
@@ -299,6 +315,9 @@ p {
   width: fill;
 }
 .menu__card__chart__element__insidecard__text {
+  overflow: hidden;
+}
+.menu__card__chart__element__insidecard__text h3, .menu__card__chart__element__insidecard__text p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
