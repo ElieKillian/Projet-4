@@ -310,9 +310,7 @@ p {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   overflow: hidden;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  width: fill;
+  width: 100%;
 }
 .menu__card__chart1__element__insidecard__text {
   overflow: hidden;
@@ -402,9 +400,7 @@ p {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   overflow: hidden;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  width: fill;
+  width: 100%;
 }
 .menu__card__chart2__element__insidecard__text {
   overflow: hidden;
@@ -494,9 +490,7 @@ p {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   overflow: hidden;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  width: fill;
+  width: 100%;
 }
 .menu__card__chart3__element__insidecard__text {
   overflow: hidden;
