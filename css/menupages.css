@@ -201,6 +201,7 @@ p {
   justify-content: space-between;
   align-items: center;
   margin-left: 1.7rem;
+  padding-top: 3.2rem;
 }
 @media all and (min-width: 1024px) {
   .menu__card__head {
