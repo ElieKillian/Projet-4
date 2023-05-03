@@ -132,6 +132,7 @@ p{
             background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
             border-radius: 25px;
+            border: none;
             font-style: normal;
             font-weight: 300;
             font-size: 1.8rem;
@@ -168,8 +169,8 @@ p{
         display: flex;
         flex-direction: column;
         gap: 2.5rem;
-        padding-top: 2.5rem;
-        
+        padding-top: 2.5rem;        
+      
         @media all and (min-width:1024px){
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -185,8 +186,7 @@ p{
             padding-top: 2.8rem;
             padding-bottom: 2.8rem;
             background-color: var(--light-grey);
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-            border-radius: 20px;
+            border-radius: 20px;    
             
             .fa-1, .fa-2, .fa-3{
                 border-radius: 2rem;
@@ -203,10 +203,7 @@ p{
             .fa-3{
                 padding: 0.4rem 0.5rem
             }
-            .fa-store{
-                color:var(--purple)
-            }
-            .fa-mobile-screen-buton, .fa-list-ul{
+            .fa-store, .fa-mobile-screen-button, .fa-list-ul{
                 color:var(--dark-grey)
             }
 
@@ -216,6 +213,14 @@ p{
                 font-weight: 500;
                 font-size: 1.6rem;
                 line-height: 1.9rem;
+            }
+        }
+
+        &__step:hover{
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+
+            .fa-store, .fa-mobile-screen-button, .fa-list-ul{
+                color:var(--purple)
             }
         }
     }
@@ -297,57 +302,70 @@ p{
 
                 &__heart{
 
-                    padding-right: 2.5rem;
+                    margin-right: 4.1rem;
                     display: flex;
-                    align-items: center;
-                    pointer-events: none;
-
+                    align-items: center;   
+                    overflow: hidden;                
+                    
                     .fa-heart{
-                        font-size: 2.4rem;
+                        font-size: 2.2rem;                        
                         cursor: pointer;   
                         position: relative;
                         overflow: hidden; 
-                        background-clip: content-box;
-                        pointer-events: all;
                         z-index: 0;
+                        box-sizing: border-box;
 
                         &::after{
                             content: '\f004';
-                            font: var(--fa-font-solid);
-                            color: var(--purple);                           
+                            font: var(--fa-font-solid);                     
                             position: absolute;
-                            overflow: hidden;
+                            background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            color: transparent;
+                            border: none;
                             width: 100%;
                             height: 100%;
                             top: 0px;
-                            left: 0px;
-                            background-clip: content-box;
-                            z-index: -1;
-                            opacity: 0;
+                            left: 0px;                            
+                            z-index: 1;
                             animation: empty-heart 1s 0s;
                             animation-fill-mode: forwards;
                         }
                         &:hover::after{
                                 animation: complete-heart 1s 0s;
                                 animation-fill-mode: forwards;
-                        }            
+
+                        }  
+                        &:hover::before{
+                            animation: hideheart 1s 0s;
+                            animation-fill-mode: forwards;
+                        }
+
                         @keyframes complete-heart{
                             from{
                                 transform: scale(0);  
-                                opacity: 0;                          
+                                opacity: 0;      
                             }
                             to{
                                 transform: scale(1);
                                 opacity: 1;
                             }
                         }
+                        
                         @keyframes empty-heart {
                             from{
                                 transform: scale(1);  
-                                opacity: 1;                          
                             }
                             to{
                                 transform: scale(0);
+                            }
+                        }
+                        @keyframes hideheart {
+                            from{
+                                opacity: 1; 
+                            }
+                            to{
                                 opacity: 0;
                             }
                         }

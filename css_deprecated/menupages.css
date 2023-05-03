@@ -114,6 +114,10 @@ a:visited {
 }
 
 /*** Général ***/
+body {
+  background: var(--white);
+}
+
 h1, h2, h3, p {
   margin: 0rem;
 }
@@ -175,7 +179,7 @@ p {
 .menu img {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100vw;
+  width: 100%;
   height: 27.5rem;
 }
 .menu__card {
@@ -186,6 +190,8 @@ p {
   flex-direction: column;
   padding-left: 1.3rem;
   padding-right: 1.3rem;
+  padding-bottom: 4rem;
+  margin-bottom: -5.5rem;
   border-top-right-radius: 2rem;
   border-top-left-radius: 2rem;
   background-color: var(--light-grey);
@@ -220,27 +226,32 @@ p {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  background-clip: content-box;
   z-index: 0;
+  box-sizing: border-box;
 }
 .menu__card__head__heart .fa-heart::after {
   content: "\f004";
   font: var(--fa-font-solid);
-  color: var(--purple);
   position: absolute;
-  overflow: hidden;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  border: none;
   width: 100%;
   height: 100%;
   top: 0px;
   left: 0px;
-  background-clip: content-box;
-  z-index: -1;
-  opacity: 0;
+  z-index: 1;
   animation: empty-heart 1s 0s;
   animation-fill-mode: forwards;
 }
 .menu__card__head__heart .fa-heart:hover::after {
   animation: complete-heart 1s 0s;
+  animation-fill-mode: forwards;
+}
+.menu__card__head__heart .fa-heart:hover::before {
+  animation: hideheart 1s 0s;
   animation-fill-mode: forwards;
 }
 @keyframes complete-heart {
@@ -256,10 +267,16 @@ p {
 @keyframes empty-heart {
   from {
     transform: scale(1);
-    opacity: 1;
   }
   to {
     transform: scale(0);
+  }
+}
+@keyframes hideheart {
+  from {
+    opacity: 1;
+  }
+  to {
     opacity: 0;
   }
 }
@@ -347,10 +364,10 @@ p {
   visibility: hidden;
   font-size: 2rem;
 }
-:active > .menu__card__chart1__element__check {
+:hover > .menu__card__chart1__element__check {
   width: 6.9rem;
 }
-:active > .menu__card__chart1__element__check .fa-circle-check {
+:hover > .menu__card__chart1__element__check .fa-circle-check {
   visibility: visible;
 }
 .menu__card__chart2 {
@@ -437,10 +454,10 @@ p {
   visibility: hidden;
   font-size: 2rem;
 }
-:active > .menu__card__chart2__element__check {
+:hover > .menu__card__chart2__element__check {
   width: 6.9rem;
 }
-:active > .menu__card__chart2__element__check .fa-circle-check {
+:hover > .menu__card__chart2__element__check .fa-circle-check {
   visibility: visible;
 }
 .menu__card__chart3 {
@@ -527,10 +544,10 @@ p {
   visibility: hidden;
   font-size: 2rem;
 }
-:active > .menu__card__chart3__element__check {
+:hover > .menu__card__chart3__element__check {
   width: 6.9rem;
 }
-:active > .menu__card__chart3__element__check .fa-circle-check {
+:hover > .menu__card__chart3__element__check .fa-circle-check {
   visibility: visible;
 }
 .menu__card__order {
@@ -542,6 +559,7 @@ p {
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
+  border: none;
   padding: 1.3rem 1.6rem;
   margin: 4rem 9.5rem 0rem;
 }

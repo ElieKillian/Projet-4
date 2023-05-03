@@ -232,6 +232,7 @@ p {
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
+  border: none;
   font-style: normal;
   font-weight: 300;
   font-size: 1.8rem;
@@ -282,7 +283,6 @@ p {
   padding-top: 2.8rem;
   padding-bottom: 2.8rem;
   background-color: var(--light-grey);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
 }
 .operation__chart__step .fa-1, .operation__chart__step .fa-2, .operation__chart__step .fa-3 {
@@ -300,10 +300,7 @@ p {
 .operation__chart__step .fa-3 {
   padding: 0.4rem 0.5rem;
 }
-.operation__chart__step .fa-store {
-  color: var(--purple);
-}
-.operation__chart__step .fa-mobile-screen-buton, .operation__chart__step .fa-list-ul {
+.operation__chart__step .fa-store, .operation__chart__step .fa-mobile-screen-button, .operation__chart__step .fa-list-ul {
   color: var(--dark-grey);
 }
 .operation__chart__step__text {
@@ -312,6 +309,12 @@ p {
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 1.9rem;
+}
+.operation__chart__step:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+.operation__chart__step:hover .fa-store, .operation__chart__step:hover .fa-mobile-screen-button, .operation__chart__step:hover .fa-list-ul {
+  color: var(--purple);
 }
 .operation .fa-solid {
   font-size: 1.6rem;
@@ -386,38 +389,42 @@ p {
   line-height: 2rem;
 }
 .restaurants__chart__cards__div__heart {
-  padding-right: 2.5rem;
+  margin-right: 4.1rem;
   display: flex;
   align-items: center;
-  pointer-events: none;
+  overflow: hidden;
 }
 .restaurants__chart__cards__div__heart .fa-heart {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  background-clip: content-box;
-  pointer-events: all;
   z-index: 0;
+  box-sizing: border-box;
 }
 .restaurants__chart__cards__div__heart .fa-heart::after {
   content: "\f004";
   font: var(--fa-font-solid);
-  color: var(--purple);
   position: absolute;
-  overflow: hidden;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  border: none;
   width: 100%;
   height: 100%;
   top: 0px;
   left: 0px;
-  background-clip: content-box;
-  z-index: -1;
-  opacity: 0;
+  z-index: 1;
   animation: empty-heart 1s 0s;
   animation-fill-mode: forwards;
 }
 .restaurants__chart__cards__div__heart .fa-heart:hover::after {
   animation: complete-heart 1s 0s;
+  animation-fill-mode: forwards;
+}
+.restaurants__chart__cards__div__heart .fa-heart:hover::before {
+  animation: hideheart 1s 0s;
   animation-fill-mode: forwards;
 }
 @keyframes complete-heart {
@@ -433,10 +440,16 @@ p {
 @keyframes empty-heart {
   from {
     transform: scale(1);
-    opacity: 1;
   }
   to {
     transform: scale(0);
+  }
+}
+@keyframes hideheart {
+  from {
+    opacity: 1;
+  }
+  to {
     opacity: 0;
   }
 }/*# sourceMappingURL=style.css.map */

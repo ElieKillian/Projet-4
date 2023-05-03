@@ -1,0 +1,836 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0rem;
+  padding: 0rem;
+  background-color: var(--white);
+}
+
+.container {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+a:visited {
+  text-decoration: none;
+  color: var(--black);
+}
+
+:root {
+  --white: #FFFFFF;
+  --light-grey: #F7F7F7;
+  --dark-grey: #7E7E7E;
+  --light-green: #99E2D0;
+  --dark-green:#008766;
+  --light-blue: #89C8FA;
+  --dark-blue: #003A68;
+  --purple: #9356DC;
+  --black: #101010;
+}
+
+@keyframes loadersite {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+@keyframes animationloader {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes progress-loading {
+  from {
+    opacity: 0;
+    transform: translateX(-999px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes complete-heart {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes empty-heart {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes hide-heart {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.header__title {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+}
+.header__title img {
+  margin-top: 1.4rem;
+  margin-bottom: 0.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 16.2rem;
+  height: 4.4rem;
+}
+.header__formulary {
+  background: #EAEAEA;
+}
+.header__formulary__place {
+  display: flex;
+  justify-content: center;
+  gap: 1.7rem;
+  padding-top: 1.55rem;
+  padding-bottom: 1.55rem;
+}
+.header__formulary__place .fa-location-dot {
+  font-size: 1.6rem;
+}
+.header__formulary__place #text__entry {
+  border: hidden;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  background: #EAEAEA;
+}
+
+.headerpages__back {
+  position: absolute;
+  top: 2.7rem;
+  left: 2.3rem;
+}
+.headerpages__back .fa-arrow-left-long {
+  font-size: 1.6rem;
+}
+.headerpages__title {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+}
+.headerpages__title img {
+  margin-top: 1.4rem;
+  margin-bottom: 0.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 16.2rem;
+  height: 4.4rem;
+}
+
+.footer {
+  margin-top: 0rem;
+  padding-left: 2.5rem;
+  background-color: #353535;
+}
+@media all and (min-width: 1024px) {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6.4rem;
+    padding-left: 0rem;
+  }
+}
+.footer__logo {
+  padding-top: 2.2rem;
+  order: 1;
+}
+@media all and (min-width: 1024px) {
+  .footer__logo {
+    padding-top: 0rem;
+    margin-right: 3rem;
+    order: 2;
+  }
+}
+.footer__logo img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 13.9rem;
+  height: 2.7rem;
+  filter: invert(100%);
+}
+.footer__chart {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.6rem;
+  padding-bottom: 2.2rem;
+  gap: 0.7rem;
+  order: 2;
+}
+@media all and (min-width: 1024px) {
+  .footer__chart {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 0rem;
+    margin-left: 40%;
+    order: 1;
+  }
+}
+.footer__chart__offer, .footer__chart__legal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+.footer__chart__offer a, .footer__chart__legal a {
+  color: var(--white);
+}
+@media all and (min-width: 1024px) {
+  .footer__chart__offer {
+    flex-direction: row;
+  }
+}
+@media all and (min-width: 1024px) {
+  .footer__chart__legal {
+    flex-direction: row;
+    margin-left: 4rem;
+  }
+}
+
+.explorer__divbutton__button {
+  padding: 1.3rem 1.875rem;
+  color: var(--white);
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  border: none;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  cursor: pointer;
+}
+.explorer__divbutton__button:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.menu__card__order {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--white);
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  border: none;
+  padding: 1.3rem 1.6rem;
+  margin: 4rem 9.5rem 0rem;
+}
+.menu__card__order:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+}
+@media all and (min-width: 1024px) {
+  .menu__card__order {
+    margin-left: 40%;
+    margin-right: 40%;
+  }
+}
+
+.fa-1, .fa-2, .fa-3 {
+  border-radius: 2rem;
+  margin-left: -1.2rem;
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.fa-1 {
+  padding: 0.4rem 0.8rem;
+}
+
+.fa-2 {
+  padding: 0.4rem 0.7rem;
+}
+
+.fa-3 {
+  padding: 0.4rem 0.5rem;
+}
+
+.fa-store, .fa-mobile-screen-button, .fa-list-ul {
+  color: var(--dark-grey);
+}
+
+.fa-heart {
+  font-size: 2.2rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  box-sizing: border-box;
+}
+.fa-heart::after {
+  content: "\f004";
+  font: var(--fa-font-solid);
+  position: absolute;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  border: none;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  animation: empty-heart 1s 0s;
+  animation-fill-mode: forwards;
+}
+.fa-heart:hover::after {
+  animation: complete-heart 1s 0s;
+  animation-fill-mode: forwards;
+}
+.fa-heart:hover::before {
+  animation: hide-heart 1s 0s;
+  animation-fill-mode: forwards;
+}
+
+.header h1, .header h2, .header h3, .loader h1, .loader h2, .loader h3, .explorer h1, .explorer h2, .explorer h3, .operation h1, .operation h2, .operation h3, .restaurants h1, .restaurants h2, .restaurants h3 {
+  font-style: normal;
+  margin: 0rem;
+  font-weight: 700;
+}
+.header h1, .header h2, .loader h1, .loader h2, .explorer h1, .explorer h2, .operation h1, .operation h2, .restaurants h1, .restaurants h2 {
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+}
+.header h3, .loader h3, .explorer h3, .operation h3, .restaurants h3 {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+}
+.header p, .loader p, .explorer p, .operation p, .restaurants p {
+  margin: 0rem;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  position: fixed;
+  background-color: var(--purple);
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  animation: loadersite 3s 0ms;
+  animation-fill-mode: forwards;
+}
+.loader img {
+  animation: animationloader 1s 0ms;
+  animation-iteration-count: infinite;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-top: 15rem;
+  width: 20rem;
+  height: 20rem;
+}
+
+.explorer {
+  text-align: center;
+  background-color: var(--light-grey);
+}
+.explorer__text {
+  padding-top: 3.95rem;
+}
+.explorer__divbutton {
+  margin-top: 2.7rem;
+  padding-bottom: 5.7rem;
+}
+
+.operation {
+  padding-left: 2rem;
+  padding-bottom: 6.8rem;
+  background-color: var(--white);
+}
+@media all and (min-width: 1024px) {
+  .operation {
+    padding-left: 18rem;
+    padding-right: 18rem;
+    padding-bottom: 5rem;
+    padding-right: 20.7rem;
+  }
+}
+.operation h2 {
+  padding-top: 4.8rem;
+}
+.operation__chart {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-top: 2.5rem;
+}
+@media all and (min-width: 1024px) {
+  .operation__chart {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.operation__chart__step {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2.3rem;
+  margin-left: 1.2rem;
+  margin-right: 2rem;
+  padding-top: 2.8rem;
+  padding-bottom: 2.8rem;
+  background-color: var(--light-grey);
+  border-radius: 20px;
+}
+.operation__chart__step__text {
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+}
+.operation__chart__step:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+.operation__chart__step:hover .fa-store, .operation__chart__step:hover .fa-mobile-screen-button, .operation__chart__step:hover .fa-list-ul {
+  color: var(--purple);
+}
+.operation .fa-solid {
+  font-size: 1.6rem;
+}
+
+.restaurants {
+  padding-top: 5.4rem;
+  padding-left: 2rem;
+  padding-right: 1.8rem;
+  padding-bottom: 3rem;
+  background-color: var(--light-grey);
+}
+@media all and (min-width: 1024px) {
+  .restaurants {
+    padding-left: 18rem;
+    padding-right: 18rem;
+  }
+}
+.restaurants__chart {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.8rem;
+  gap: 1.8rem;
+}
+@media all and (min-width: 1024px) {
+  .restaurants__chart {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem 10rem;
+  }
+}
+.restaurants__chart__cards {
+  height: 25.1rem;
+  border-radius: 2rem;
+  background-color: var(--white);
+}
+.restaurants__chart__cards__image {
+  height: 18.1rem;
+  position: relative;
+}
+.restaurants__chart__cards__image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 18.1rem;
+  width: 100%;
+  border-radius: 20px 20px 0px 0px;
+}
+.restaurants__chart__cards__image__new {
+  position: absolute;
+  z-index: 1;
+  right: 10%;
+  top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8rem;
+  height: 2.8rem;
+  background-color: var(--light-green);
+  color: var(--dark-green);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+.restaurants__chart__cards__div {
+  display: flex;
+  justify-content: space-between;
+}
+.restaurants__chart__cards__div__text {
+  padding-top: 1.6rem;
+  padding-left: 1.3rem;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.7rem;
+  line-height: 2rem;
+}
+.restaurants__chart__cards__div__heart {
+  margin-right: 4.1rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.restaurants__chart__cards__div__heart__heart {
+  margin-right: 4.1rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.headerpages h1, .headerpages h2, .headerpages h3, .headerpages p, .menu h1, .menu h2, .menu h3, .menu p {
+  margin: 0rem;
+}
+.headerpages h1, .menu h1 {
+  font-family: "Shrikhand";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 4.1rem;
+}
+.headerpages h2, .menu h2 {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  text-transform: uppercase;
+}
+.headerpages h3, .menu h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+.headerpages p, .menu p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+
+.menu img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 27.5rem;
+}
+.menu__card {
+  position: relative;
+  top: -5.5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
+  padding-bottom: 4rem;
+  margin-bottom: -5.5rem;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  background-color: var(--light-grey);
+}
+@media all and (min-width: 1024px) {
+  .menu__card {
+    margin-left: 13%;
+    margin-right: 13%;
+  }
+}
+.menu__card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 1.7rem;
+  padding-top: 3.2rem;
+}
+@media all and (min-width: 1024px) {
+  .menu__card__head {
+    justify-content: center;
+    gap: 2.4rem;
+  }
+}
+.menu__card__head__heart {
+  margin-right: 4.1rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.menu__card__chart1 {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.menu__card__chart1 h2 {
+  height: 2.7rem;
+  width: 4rem;
+  border-bottom: 2px solid var(--light-green);
+}
+@media all and (min-width: 1024px) {
+  .menu__card__chart1 {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+.menu__card__chart1__element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  background: var(--white);
+  box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+  border-radius: 1.5rem;
+  height: 6.9rem;
+  animation: progress-loading 500ms 500ms;
+  animation-fill-mode: forwards;
+}
+.menu__card__chart1__element__insidecard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  overflow: hidden;
+  width: 100%;
+}
+.menu__card__chart1__element__insidecard__text {
+  overflow: hidden;
+}
+.menu__card__chart1__element__insidecard__text h3, .menu__card__chart1__element__insidecard__text p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu__card__chart1__element__insidecard__price {
+  padding-left: 1.5rem;
+}
+.menu__card__chart1__element__insidecard__price p {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+.menu__card__chart1__element__check {
+  display: flex;
+  justify-content: center;
+  background-color: var(--light-green);
+  color: var(--white);
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  width: 0rem;
+  transition-property: width;
+  transition-duration: 500ms;
+  transition-delay: 0s;
+}
+.menu__card__chart1__element__check .fa-circle-check {
+  visibility: hidden;
+  font-size: 2rem;
+}
+:hover > .menu__card__chart1__element__check {
+  width: 6.9rem;
+}
+:hover > .menu__card__chart1__element__check .fa-circle-check {
+  visibility: visible;
+}
+.menu__card__chart2 {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.menu__card__chart2 h2 {
+  height: 2.7rem;
+  width: 4rem;
+  border-bottom: 2px solid var(--light-green);
+}
+@media all and (min-width: 1024px) {
+  .menu__card__chart2 {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+.menu__card__chart2__element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  background: var(--white);
+  box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+  border-radius: 1.5rem;
+  height: 6.9rem;
+  animation: progress-loading 1s 500ms;
+  animation-fill-mode: forwards;
+}
+.menu__card__chart2__element__insidecard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  overflow: hidden;
+  width: 100%;
+}
+.menu__card__chart2__element__insidecard__text {
+  overflow: hidden;
+}
+.menu__card__chart2__element__insidecard__text h3, .menu__card__chart2__element__insidecard__text p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu__card__chart2__element__insidecard__price {
+  padding-left: 1.5rem;
+}
+.menu__card__chart2__element__insidecard__price p {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+.menu__card__chart2__element__check {
+  display: flex;
+  justify-content: center;
+  background-color: var(--light-green);
+  color: var(--white);
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  width: 0rem;
+  transition-property: width;
+  transition-duration: 500ms;
+  transition-delay: 0s;
+}
+.menu__card__chart2__element__check .fa-circle-check {
+  visibility: hidden;
+  font-size: 2rem;
+}
+:hover > .menu__card__chart2__element__check {
+  width: 6.9rem;
+}
+:hover > .menu__card__chart2__element__check .fa-circle-check {
+  visibility: visible;
+}
+.menu__card__chart3 {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.menu__card__chart3 h2 {
+  height: 2.7rem;
+  width: 4rem;
+  border-bottom: 2px solid var(--light-green);
+}
+@media all and (min-width: 1024px) {
+  .menu__card__chart3 {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+.menu__card__chart3__element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  background: var(--white);
+  box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+  border-radius: 1.5rem;
+  height: 6.9rem;
+  animation: progress-loading 1500ms 500ms;
+  animation-fill-mode: forwards;
+}
+.menu__card__chart3__element__insidecard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  overflow: hidden;
+  width: 100%;
+}
+.menu__card__chart3__element__insidecard__text {
+  overflow: hidden;
+}
+.menu__card__chart3__element__insidecard__text h3, .menu__card__chart3__element__insidecard__text p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu__card__chart3__element__insidecard__price {
+  padding-left: 1.5rem;
+}
+.menu__card__chart3__element__insidecard__price p {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+.menu__card__chart3__element__check {
+  display: flex;
+  justify-content: center;
+  background-color: var(--light-green);
+  color: var(--white);
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  width: 0rem;
+  transition-property: width;
+  transition-duration: 500ms;
+  transition-delay: 0s;
+}
+.menu__card__chart3__element__check .fa-circle-check {
+  visibility: hidden;
+  font-size: 2rem;
+}
+:hover > .menu__card__chart3__element__check {
+  width: 6.9rem;
+}
+:hover > .menu__card__chart3__element__check .fa-circle-check {
+  visibility: visible;
+}/*# sourceMappingURL=main.css.map */
